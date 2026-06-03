@@ -19,11 +19,15 @@ class PeachControllerTest {
     @Test
     void getPeach_shouldReturnCatchPhrase() throws Exception {
         //TODO: Implement test
+        mockMvc.perform(get("/peach"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("I'm Princess Peach!"));
     }
 
     @Test
     void postPeach_shouldReturnWeirdPostPhrase() throws Exception {
         mockMvc.perform(post("/peach"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("I'm posting peaches!"));    }
+                .andExpect(content().string("I'm posting peaches!"));
+    }
 }
