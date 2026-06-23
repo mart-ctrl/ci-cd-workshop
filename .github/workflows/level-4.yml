@@ -20,6 +20,12 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: application-MART.jar
+          path: build/libs/*.jar
+
       # TODO - Build parameters toevoegen (hint: niet hier)
 
       # TODO - Produceer een build artifact (JAR) met Gradle
