@@ -25,6 +25,13 @@ jobs:
       - name: Run tests
         run: ./gradlew test
 
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: build/reports/tests/test
+
         # TODO - Run een gradle test command
 
         # TODO - Upload een test rapport met het resultaat van de gedraaide testen
