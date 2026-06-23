@@ -1,7 +1,7 @@
 name: Level 2 - Koopa's Fortress
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch: { }
 
 jobs:
   build:
@@ -20,7 +20,10 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build with Gradle
-        run: ./gradlew -b ci.gradle package
+        run: ./gradlew build
+
+      - name: Run tests
+        run: ./gradlew test
 
         # TODO - Run een gradle test command
 
